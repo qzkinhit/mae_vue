@@ -1,6 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
+import { crop, match, rec } from '@/api/user'
 
 const state = {
   token: getToken(),
@@ -31,13 +32,32 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
-    const { username, password } = userInfo
+    const { username, password, face } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
-        const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
-        resolve()
+      login(username, password, face).then(res => {
+        console.log(res)
+        if (res.success == true) {
+          if (res.score > 80) {
+            commit('SET_TOKEN', username)
+            setToken(username)
+            resolve(1)
+          } else {
+            resolve(0)
+          }
+        } else {
+          //活体检测失败
+          console.log('aa')          
+          if(res.err_code == 223120)
+          {
+             resolve(2)
+             console.log('bb')
+          }
+          else if(res.err_code == 222202)
+          // 生物密码不正确，恢复图片乱码
+          {
+              resolve(0)
+          }
+        }
       }).catch(error => {
         reject(error)
       })

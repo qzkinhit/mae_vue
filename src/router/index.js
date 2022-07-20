@@ -56,6 +56,16 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/auth',
+    component: () => import('@/views/auth'),
+    hidden: true
+  },
+  {
+    path: '/signUp',
+    component: () => import('@/views/signUp'),
+    hidden: true
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
@@ -79,7 +89,7 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '主页', icon: 'dashboard', affix: true }
       }
     ]
   },
@@ -91,7 +101,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/documentation/index'),
         name: 'Documentation',
-        meta: { title: 'Documentation', icon: 'documentation', affix: true }
+        meta: { title: '操作文档', icon: 'documentation', affix: true }
       }
     ]
   },
@@ -104,7 +114,7 @@ export const constantRoutes = [
         path: 'index',
         component: () => import('@/views/guide/index'),
         name: 'Guide',
-        meta: { title: 'Guide', icon: 'guide', noCache: true }
+        meta: { title: '指南', icon: 'guide', noCache: true }
       }
     ]
   },
@@ -136,7 +146,7 @@ export const asyncRoutes = [
     alwaysShow: true, // will always show the root menu
     name: 'Permission',
     meta: {
-      title: 'Permission',
+      title: '权限管理',
       icon: 'lock',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
@@ -179,16 +189,16 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/icons/index'),
         name: 'Icons',
-        meta: { title: 'Icons', icon: 'icon', noCache: true }
+        meta: { title: '图标设置', icon: 'icon', noCache: true }
       }
     ]
   },
 
   /** when your routing map is too long, you can split it into small modules **/
-  componentsRouter,
-  chartsRouter,
-  nestedRouter,
-  tableRouter,
+  // componentsRouter,
+  // chartsRouter,
+  // nestedRouter,
+  // tableRouter,
 
   {
     path: '/example',
@@ -196,7 +206,7 @@ export const asyncRoutes = [
     redirect: '/example/list',
     name: 'Example',
     meta: {
-      title: 'Example',
+      title: '公告栏',
       icon: 'el-icon-s-help'
     },
     children: [
@@ -230,7 +240,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/tab/index'),
         name: 'Tab',
-        meta: { title: 'Tab', icon: 'tab' }
+        meta: { title: '表格', icon: 'tab' }
       }
     ]
   },
@@ -244,6 +254,7 @@ export const asyncRoutes = [
       title: 'Error Pages',
       icon: '404'
     },
+    hidden: true,
     children: [
       {
         path: '401',
@@ -268,7 +279,7 @@ export const asyncRoutes = [
         path: 'log',
         component: () => import('@/views/error-log/index'),
         name: 'ErrorLog',
-        meta: { title: 'Error Log', icon: 'bug' }
+        meta: { title: '错误日志', icon: 'bug' }
       }
     ]
   },
@@ -354,7 +365,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/theme/index'),
         name: 'Theme',
-        meta: { title: 'Theme', icon: 'theme' }
+        meta: { title: '主题', icon: 'theme' }
       }
     ]
   },
@@ -367,7 +378,7 @@ export const asyncRoutes = [
         path: 'index',
         component: () => import('@/views/clipboard/index'),
         name: 'ClipboardDemo',
-        meta: { title: 'Clipboard', icon: 'clipboard' }
+        meta: { title: '剪切板', icon: 'clipboard' }
       }
     ]
   },
