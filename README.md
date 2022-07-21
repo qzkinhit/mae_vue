@@ -6,20 +6,26 @@
 
 ## 几个重要的项目目录
 
--- node_modules		项目依赖包
+**node_modules**				 依赖库
 
--- src
+**src**
 
-​		-- api 						后端请求接口
-
-​		-- componets			前端组件
-
-​		-- router				   导航栏路由管理
-
-​	 	-- views					页面主文件(.vue) 
-
-​				-- auth.vue		认证页面
-
-​				-- login/index.vue				登录页面
-
-​				-- dashboard/index.vue		员工演示主页
+├─api
+├─assets
+│  ├─401_images
+│  ├─404_images
+│  ├─custom-theme
+│  │  └─fonts
+│  └─tracking					人脸检测库
+├─components
+├─router							路由配置页
+│  └─modules
+└─views							前端展示文件夹
+    ├─dashboard				主页
+    │  ├─admin		
+    │  │  └─components
+    │  │      ├─mixins
+    │  │      └─TodoList
+    │  └─editor
+    ├─login							登录页
+    │  └─components
