@@ -16,17 +16,17 @@
 │  ├─404_images
 │  ├─custom-theme
 │  │  └─fonts
-│  └─tracking					人脸检测库
+│  └─tracking 人脸检测库
 ├─components
-├─router							路由配置页
+├─router  路由配置页
 │  └─modules
-└─views							前端展示文件夹
-    ├─dashboard				主页
+└─views 前端展示文件夹
+    ├─dashboard 主页
     │  ├─admin		
     │  │  └─components
     │  │      ├─mixins
     │  │      └─TodoList
     │  └─editor
-    ├─login							登录页
+    ├─login  登录页
     │  └─components
 ```
