@@ -9,7 +9,7 @@
 **node_modules**				 依赖库
 
 **src**
-
+```
 ├─api
 ├─assets
 │  ├─401_images
@@ -29,3 +29,4 @@
     │  └─editor
     ├─login							登录页
     │  └─components
+```
